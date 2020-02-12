@@ -10,8 +10,29 @@
   background-position: bottom;
   transition: 0.4 ease;
 }
-.cloudy {
-  background-image: url('./assets/overcast.jpeg')
+.Clouds {
+  background-image: url('./assets/overcast.jpeg');
+  background-size: 250%;
+}
+.Rain {
+  background-image: url('./assets/rainy.jpeg')
+}
+.Sunny {
+  background-image: url('./assets//sunny.jpeg')
+}
+.Snow {
+  background-image: url('./assets/snow.jpeg');
+  background-size: 80%;
+}
+.other {
+  background-image: url('./assets/default.jpeg')
+}
+.Clear {
+  background-image: url('./assets/default.jpeg')
+}
+.Haze {
+  background-image: url('./assets/haze.jpeg');
+  background-size: 80%;
 }
 
 main {

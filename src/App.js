@@ -41,7 +41,10 @@ const datebuilder = (d) => {
     return `${day} ${date} ${month} ${year}`
 }
   return (
-     <div className={(typeof weather.main != "undefined")}>
+     <div className={(typeof weather.main != "undefined")? ((weather.weather[0].main !== 'undefined') ? weather.weather[0].main : weather.weather[0].main) : 'other'}>
+    
+     
+     
      
       <main>
         <div className="search-box">
@@ -70,6 +73,7 @@ const datebuilder = (d) => {
         ) : ('')}
       </main>
     </div>
+    
   );
 }
 
