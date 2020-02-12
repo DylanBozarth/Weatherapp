@@ -4,22 +4,14 @@
   box-sizing: border-box;
 }
 
-body {
-  
-}
-
 .app {
   background-image: url('./assets/default.jpeg');
   background-size: cover;
   background-position: bottom;
   transition: 0.4 ease;
 }
-
-.app.warm {
-  background-image: url('');
-}
-.app.cold {
-
+.cloudy {
+  background-image: url('./assets/overcast.jpeg')
 }
 
 main {

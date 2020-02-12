@@ -7,11 +7,12 @@ key: 'be37111ec63e7fd3357da4e1cec0a989',
 base: 'https://api.openweathermap.org/data/2.5/'
 }
 function App() {
-  if (results === undefined)
-  results = null
 
-  
-  const [query, setQuery] = useState('');
+
+
+
+
+  let [query, setQuery] = useState('');
   const [weather, setWeather] = useState({});
 
   
@@ -40,36 +41,35 @@ const datebuilder = (d) => {
     return `${day} ${date} ${month} ${year}`
 }
   return (
-    
-    
-    <div className="app">
-      <main> 
-<div className="search-box">
-  <input type="text" placeholder="Search by city" className="search-bar"
-   onChange={e => setQuery(e.target.value)} 
-   value={query}
-   onKeyPress={search}>Spokane</input>
-   
-  
-  <div className="container location-box">
-    <div className="location">{weather.name}, {weather.sys.country}</div>
-    <div className="date">{datebuilder(new Date())}</div>
-  </div>
-</div>
-<div className="weather-box">
-  <div className="temp">
-  {Math.round(weather.main.temp)}°c
-    
-  </div>
-
-  <div className="weather">
-{weather.weather[0].main}
-  </div>
-</div>
-) : ('')}
+     <div className={(typeof weather.main != "undefined")}>
+     
+      <main>
+        <div className="search-box">
+          <input 
+            type="text"
+            className="search-bar"
+            placeholder="Search..."
+            onChange={e => setQuery(e.target.value)}
+            value={query}
+            onKeyPress={search}
+          />
+        </div>
+        {(typeof weather.main != "undefined") ? (
+        <div>
+          <div className="location-box">
+            <div className="location">{weather.name}, {weather.sys.country}</div>
+            <div className="date">{datebuilder(new Date())}</div>
+          </div>
+          <div className="weather-box">
+            <div className="temp">
+              {Math.round(weather.main.temp)}°c
+            </div>
+            <div className="weather">{weather.weather[0].main}</div>
+          </div>
+        </div>
+        ) : ('')}
       </main>
     </div>
-  
   );
 }
 
