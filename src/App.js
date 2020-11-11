@@ -42,7 +42,7 @@ const datebuilder = (d) => {
 }
   return (
     <div>
-    <h4 className="othertext">Just type in a city and press enter, watch the background change according to the weather. <br /> This App was made for mobile phones with React. </h4>
+    <h4 className="othertext">Just type in a city and press enter, watch the background change according to the weather. </h4>
      <div className={(typeof weather.main != "undefined")? ((weather.weather[0].main !== 'undefined') ? weather.weather[0].main : weather.weather[0].main) : 'other'}>
     
      
